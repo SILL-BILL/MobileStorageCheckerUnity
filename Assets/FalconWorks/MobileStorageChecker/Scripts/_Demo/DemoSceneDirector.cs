@@ -7,10 +7,8 @@ public class DemoSceneDirector : MonoBehaviour {
 
 	// --------
 	#region インスペクタ設定用フィールド
-	/// <summary> 
-	/// 
-	/// </summary>
-	[SerializeField] Text m_ByteText;
+	[SerializeField] Text m_ByteTextLandscape;
+	[SerializeField] Text m_ByteTextPortrait;
 	#endregion
 
 	// --------
@@ -40,7 +38,8 @@ public class DemoSceneDirector : MonoBehaviour {
 		Debug.Log ("MOB^num:"+num);
 		Debug.Log ("MOB^num type:"+num.GetType ());
 
-		m_ByteText.text = num.ToString();
+		m_ByteTextLandscape.text = num.ToString();
+		m_ByteTextPortrait.text = num.ToString ();
 
 	}
 	/// <summary> 
@@ -55,7 +54,8 @@ public class DemoSceneDirector : MonoBehaviour {
 
 			ulong num;
 			num = MobileStorageChecker.StorageAvailable;
-			m_ByteText.text = num.ToString ();
+			m_ByteTextLandscape.text = num.ToString ();
+			m_ByteTextPortrait.text = num.ToString ();
 
 			m_TimeElapsed = 0.0f;
 		}
@@ -66,8 +66,8 @@ public class DemoSceneDirector : MonoBehaviour {
 	/// 更新処理
 	/// </summary>
 	void LateUpdate(){
-
 	}
+
 	#endregion
 
 	// --------
